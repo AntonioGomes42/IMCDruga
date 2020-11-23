@@ -1,0 +1,107 @@
+body {
+    background: #eeeeee;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    max-height: calc(100vh - 40px);
+    padding: 20px 0;
+    text-align: center;
+}
+
+form{
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 1px 6px rgba(32, 33, 36, .28);
+    margin: 0 auto;
+    padding: 20px 0;
+    text-align: center;
+    width: 800px;
+}
+
+#div_botton{
+    padding-top: 13px;
+}
+
+#label_entrada_dados1{
+    padding-left: 13px;
+}
+
+#label_entrada_dados2{
+    padding-left: 13px;
+}
+
+#entrada_dados_botton{
+    background-color: #1f104f;
+    border: none;
+    color: white;
+    padding: 14px 18px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 10px;
+}
+
+#logo_madruga{
+    height: 240px;
+}
+
+#div_logo{
+    padding-bottom: 25px;
+}
+#nome_logo{
+    font-family: 'Montserrat', sans-serif;
+    color: darkgreen;
+}
+
+#titulo_logo{
+    color: black;
+}
+
+#altura_number{
+    padding: 6px;
+}
+
+#peso_number{
+    padding: 6px;
+}
+
+#imc_calc{
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 1px 6px rgba(32, 33, 36, .28);
+    margin: 0 auto;
+    padding: 20px 0;
+    text-align: center;
+    width: 800px;
+    max-width: calc(100vh - 40px);
+}
+
+#imagem__madruga{
+    width: 100%;
+    padding-top: 7px;
+    padding-bottom: 5px;
+}
+
+#frase__madruga{
+    color: black;
+}
+
+#resultado__imc{
+    color: #03032f;
+}
+
+#cacular_novamente_botton{
+    background-color: #1f104f;
+    border: none;
+    color: white;
+    padding: 14px 18px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 10px;
+}
+
+#calcular_novamente{
+    padding-top:15px;;
+}

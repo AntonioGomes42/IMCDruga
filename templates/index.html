@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMCDruga</title>
+    <link rel="stylesheet" href="../static/style.css" />
+</head>
+<body>
+    {% if not request.form['altura_number'] %}
+        <div className='imc_calc' >
+           <form className="form" method='POST'>
+               <h3 id="titulo_logo">IMCDruga</h3>
+                <div id="div_logo" >
+                    <img src="../static/assets/Logo_druga.png" alt="Logo IMCDruga" id="logo_madruga" >
+                    <p id="nome_logo">"Só não te dou outra porque...minha vózinha gostava de matemática."</p>
+                </div>
+                <label for="altura_number" id="label_entrada_dados1">Digite sua altura(m):</label>
+
+                <input type="text" className="entrada_dados" id="altura_number" name="altura_number" placeholder="Insira aqui sua altura" required/>
+
+                <label for="peso_number" id="label_entrada_dados2">Digite seu peso(kg):</label>
+
+                <input type="text" classNAme="entrada_dados" id="peso_number" name="peso_number" placeholder="Insira aqui seu peso" required/>
+
+                <div id="div_botton">
+                    <input type="submit" id="entrada_dados_botton" value="Calcular"> 
+                </div>
+              
+           </form>
+        </div>
+    {% else %}
+            <div id="imc_calc">
+                    <div id="frase__madruga">
+                        <b>{{ frase_madruga }}</b>
+                    </div>
+                    
+                    <div>
+                        <img src="{{ imagem }}" alt="Imagem do seu madruga" id="imagem__madruga" />
+                    </div>
+                    
+                    <div id="resultado__imc">
+                        {% if imagem=='/static/assets/invalido.gif' %}
+                            <b>{{ resultado }}</b>
+                        {% else %}
+                            Você está com <b>{{ resultado }}</b>
+                        {% endif %}        
+                    </div>
+                    <div id="calcular_novamente">
+                        <a href="/" id="cacular_novamente_botton">Calcular Novamente</a>
+                    </div>
+            </div>
+    {% endif %}
+</body>
+</html>
