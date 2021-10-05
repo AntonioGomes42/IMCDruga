@@ -12,7 +12,7 @@ def is_number_tryexcept(s):
 def imc_img(resultado):
     index = 'index.html'
 
-    if resultado < 18.5:
+    if resultado>0 and resultado < 18.5:
         if resultado<1 :
             frase_madruga = "\"Quando a fome aperta, a vergonha afrouxa...\""
             resultado = "o peso abaixo do ideal! Seu imc é: " + str(resultado) + " ."
@@ -30,7 +30,7 @@ def imc_img(resultado):
         imagem = '/static/assets/normal.gif'
         return render_template( index, frase_madruga = frase_madruga, resultado = resultado, imagem = imagem)
     
-    elif resultado > 24.9 :
+    elif resultado > 24.9 and resultado<=600:
         frase_madruga = "\"Sou um homem de muita barriga senhor sorte.\""
         resultado = "o peso acima do ideal! Seu imc é: " + format(resultado, '.2f') + " ."
         imagem = '/static/assets/seu_barriga.gif'
@@ -60,11 +60,10 @@ def index():
             if n1>0 and n2>0:  
                 resultado = n2/(n1*n1)
                 n = imc_img(resultado)          
-            return n
-        else:
-            resultado = "Por favor, insira dígitos válidos."
-            frase_madruga = "\"Eu sabia que você era idiota, mas não a nível executivo!\""
-            imagem = '/static/assets/invalido.gif'
-            return render_template( index, frase_madruga = frase_madruga, resultado = resultado, imagem = imagem)     
-
+                return n
+            else:
+                resultado = "Por favor, insira dígitos válidos."
+                frase_madruga = "\"Eu sabia que você era idiota, mas não a nível executivo!\""
+                imagem = '/static/assets/invalido.gif'
+                
     return render_template( index, frase_madruga = frase_madruga, resultado = resultado, imagem = imagem)
