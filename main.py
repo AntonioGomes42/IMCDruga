@@ -45,11 +45,11 @@ def imc_img(resultado):
 
 @app.route('/', methods=['GET', 'POST'] )
 def index():
-    frase_madruga= None
-    imagem = None
+    frase_madruga= "\"Eu sabia que você era idiota, mas não a nível executivo!\""
+    imagem = '/static/assets/invalido.gif'
     n1 = None
     n2 = None
-    resultado =  None
+    resultado = "Por favor, insira dígitos válidos."
     index = 'index.html'
 
     if request.method == 'POST':
@@ -61,9 +61,5 @@ def index():
                 resultado = n2/(n1*n1)
                 n = imc_img(resultado)          
                 return n
-            else:
-                resultado = "Por favor, insira dígitos válidos."
-                frase_madruga = "\"Eu sabia que você era idiota, mas não a nível executivo!\""
-                imagem = '/static/assets/invalido.gif'
                 
     return render_template( index, frase_madruga = frase_madruga, resultado = resultado, imagem = imagem)
