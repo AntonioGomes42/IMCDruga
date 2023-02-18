@@ -41,7 +41,6 @@ def imc_img(resultado):
         frase_madruga = "\"Eu sabia que você era idiota, mas não a nível executivo!\""
         imagem = '/static/assets/invalido.gif'
         return render_template( index, frase_madruga = frase_madruga, resultado = resultado, imagem = imagem)
-    
 
 @app.route('/', methods=['GET', 'POST'] )
 def index():
